@@ -19,3 +19,6 @@ for more options.
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 #define NO_ACTION_ONESHOT
+
+// Enable Linux Unicode support
+#define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
