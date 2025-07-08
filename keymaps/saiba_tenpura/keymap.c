@@ -99,21 +99,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       │ r a i s e                                       │      ╭╮╭╮╭╮╭╮
       └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
                 ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
-        ╌┄┈┈───═╡    !    │    @    │    #    │    $    │    %    ││    ^    │    &    │    Ü    │    °    │    /    │
+        ╌┄┈┈───═╡         │         │         │         │         ││  UNDO   │  PASTE  │  COPY   │   CUT   │  REDO   │
                 ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
-                │    Ä    │    è    │    SZ   │    é    │         ││         │    ¥    │    €    │    £    │    Ö    │
+                │         │         │         │         │         ││  LEFT   │  DOWN   │   UP    │  RIGHT  │ INSERT  │
       ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-      │         │    `    │    ~    │   CUE   │         │         ││         │         │         │ DM REC1 │ DM STOP │ DM PLY1 │
+      │         │         │         │         │         │         ││  HOME   │ P DOWN  │  P UP   │   END   │    ▼    │    ▼    │
       └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                    │  GIPHY  │ ADJUST  │    ▼    ││    ▼    │    ▼    │    ▼    │
+                                    │    ▼    │ ADJUST  │    ▼    ││    ▼    │    ▼    │    ▼    │
                                     └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */
 
     [_RAISE] = LAYOUT(
         //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-                 KC_EXLM,      KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,    KC_CIRC, KC_AMPR,          RALT(KC_U), RALT(KC_3), KC_BSLS,
-                 RALT(KC_A),   RALT(KC_F), RALT(KC_S), RALT(KC_G), XXXXXXX,    XXXXXXX, LSFT(RALT(KC_4)), RALT(KC_5), RALT(KC_4), RALT(KC_O),
-        XXXXXXX, LSFT(KC_GRV), KC_TILD,    RALT(KC_C), XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,          XXXXXXX,    DM_REC1,    DM_RSTP,    DM_PLY1,
-                                           _______,    MO(3),      _______,    _______, _______,          _______
+                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    LCTL(KC_Z), LCTL(KC_V), LCTL(KC_C), LCTL(KC_X), LCTL(KC_Y),
+                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,   KC_INSERT,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     _______,  _______,
+                                   _______,   MO(3), _______,    _______,    _______,    _______
     ),
 
     /*
