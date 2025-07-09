@@ -30,14 +30,7 @@ enum totem_layers {
 // │ d e f i n e   k e y c o d e s                   │
 // └─────────────────────────────────────────────────┘
 
-enum custom_keycodes {
-    QWERTY,
-    LOWER,
-    RAISE,
-    ADJUST,
-    MAKE_H,
-    SNAP
-};
+// enum custom_keycodes {};
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ K E Y M A P S                                                                                                          │
@@ -55,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
                 │    A    │    S    │    D    │    F    │    G    ││    H    │    J    │    K    │    L    │    ;    │
       ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-      │    Q    │    Z    │    X    │    C    │    V    │    B    ││    N    │    M    │    ,    │    .    │    /    │    \    │
+      │   ESC   │    Z    │    X    │    C    │    V    │    B    ││    N    │    M    │    ,    │    .    │    /    │    \    │
       └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                     │  CTRL   │  LOWER  │  SPACE  ││  ENTER  │  RAISE  │  BSPC   │
                                     └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘*/
@@ -64,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
                  KC_Q,               KC_W,                KC_E,               KC_R,               KC_T,       KC_Y,    KC_U,               KC_I,               KC_O,               KC_P,
                  MT(MOD_LGUI, KC_A), MT(MOD_LALT, KC_S),  MT(MOD_LCTL, KC_D), MT(MOD_LSFT, KC_F), KC_G,       KC_H,    MT(MOD_RSFT, KC_J), MT(MOD_LCTL, KC_K), MT(MOD_LALT, KC_L), MT(MOD_LGUI, KC_SCLN),
-        KC_ESC,  KC_Z,               KC_X,                KC_C,               KC_V,               KC_B,       KC_N,    KC_M,               KC_COMM,            KC_DOT,             KC_SLSH,               KC_TILD,
+        KC_ESC,  KC_Z,               KC_X,                KC_C,               KC_V,               KC_B,       KC_N,    KC_M,               KC_COMM,            KC_DOT,             KC_SLSH,               KC_BSLS,
                                                           KC_DEL,             LT(1, KC_TAB),      KC_SPC,     KC_ENT,  LT(2, KC_ESC),      KC_BSPC
     ),
 
@@ -147,56 +140,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case CG_TOGG:
-            if (record->event.pressed) {
-                if (!keymap_config.swap_lctl_lgui) {
-                    keymap_config.swap_lctl_lgui = true; // ─── MAC
-                } else {
-                    keymap_config.swap_lctl_lgui = false; // ─── WIN
-                }
-
-                eeconfig_update_keymap(&keymap_config);
-                clear_keyboard(); // ──── clear to prevent stuck keys
-                return false;
-            }
-
-            // ┌─────────────────────────────────────────────────┐
-            // │ l a y e r                                       │
-            // └─────────────────────────────────────────────────┘
-
-        case QWERTY:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_QWERTY);
-            }
-            return false;
-
-            // ┌─────────────────────────────────────────────────┐
-            // │ q m k                                           │
-            // └─────────────────────────────────────────────────┘
-
-        case MAKE_H:
-            if (record->event.pressed) {
-                SEND_STRING("qmk compile -kb geigeigeist/totem -km default");
-                tap_code(KC_ENTER);
-            }
-            break;
-
-            // ┌─────────────────────────────────────────────────┐
-            // │ p r o d u c t i v i t y                         │
-            // └─────────────────────────────────────────────────┘
-
-        case SNAP:
-            if (record->event.pressed) {
-                if (keymap_config.swap_lctl_lgui) {
-                    SEND_STRING(SS_LSFT(SS_LCMD(SS_LCTL("4")))); // MAC
-                } else {
-                    SEND_STRING(SS_LSFT(SS_LWIN("S"))); // WIN
-                }
-            }
-            break;
-    }
-
     return true;
 }
 /*
