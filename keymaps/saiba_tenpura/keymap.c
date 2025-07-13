@@ -92,21 +92,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       │ r a i s e                                       │      ╭╮╭╮╭╮╭╮
       └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
                 ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
-        ╌┄┈┈───═╡         │         │         │         │         ││  UNDO   │  PASTE  │  COPY   │   CUT   │  REDO   │
+        ╌┄┈┈───═╡    &    │    ~    │    =    │    \    │    `    ││         │         │         │         │         │
                 ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
-                │         │         │         │         │         ││  LEFT   │  DOWN   │   UP    │  RIGHT  │ INSERT  │
+                │    !    │    @    │    #    │    $    │    %    ││  LEFT   │  DOWN   │   UP    │  RIGHT  │ INSERT  │
       ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-      │         │         │         │         │         │         ││  HOME   │ P DOWN  │  P UP   │   END   │    ▼    │    ▼    │
+      │    ^    │    |    │         │         │    -    │    _    ││  HOME   │ P DOWN  │  P UP   │   END   │         │         │
       └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                    │    ▼    │ ADJUST  │    ▼    ││    ▼    │    ▼    │    ▼    │
+                                    │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    ▼    │
                                     └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */
+
 
     [_RAISE] = LAYOUT(
         //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    LCTL(KC_Z), LCTL(KC_V), LCTL(KC_C), LCTL(KC_X), LCTL(KC_Y),
-                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,   KC_INSERT,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     _______,  _______,
-                                   _______,   MO(3), _______,    _______,    _______,    _______
+                 KC_AMPR, KC_TILD, KC_EQL,  KC_BSLS, KC_GRAVE,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
+                 KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_INSERT,
+        KC_CIRC, KC_PIPE, XXXXXXX, XXXXXXX, KC_MINS, KC_UNDS,    KC_HOME, KC_PGDN, KC_PGUP, KC_END,   XXXXXXX,    XXXXXXX,
+                                   _______, _______, _______,    _______, _______, _______
     ),
 
     /*
