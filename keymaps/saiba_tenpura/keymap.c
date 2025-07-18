@@ -120,17 +120,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
                 │  SHIFT  │    A    │    S    │    D    │    G+   ││         │   F4    │   F5    │   F6    │   F11   │
       ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-      │   FUN   │  CTRL   │    Z    │    X    │    C    │    V    ││         │   F1    │   F2    │   F3    │   F10   │   F13   │
+      │         │  CTRL   │    Z    │    X    │    C    │    V    ││         │   F1    │   F2    │   F3    │   F10   │   F13   │
       └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                     │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    ▼    │
                                     └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */
 
     [_FUN] = LAYOUT(
         //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-               KC_TAB,   KC_Q,  KC_W,     KC_E,    KC_R,         KC_PSCR, KC_F7,   KC_F8,   KC_F9,   KC_F12,
-               KC_LSFT,  KC_A,  KC_S,     KC_D,    LT(4, KC_G),  XXXXXXX, KC_F4,   KC_F5,   KC_F6,   KC_F11,
-        TG(3), KC_LCTL,  KC_Z,  KC_X,     KC_C,    KC_V,         XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F10,  KC_F13,
-                                _______,  _______, _______,      _______, _______, _______
+                 KC_TAB,   KC_Q,  KC_W,     KC_E,    KC_R,         KC_PSCR, KC_F7,   KC_F8,   KC_F9,   KC_F12,
+                 KC_LSFT,  KC_A,  KC_S,     KC_D,    LT(4, KC_G),  XXXXXXX, KC_F4,   KC_F5,   KC_F6,   KC_F11,
+        XXXXXXX, KC_LCTL,  KC_Z,  KC_X,     KC_C,    KC_V,         XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F10,  KC_F13,
+                                  _______,  _______, _______,      _______, _______, _______
     ),
 
     /*
@@ -144,16 +144,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
                 │         │         │         │         │         ││         │         │         │         │         │
       ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-      │         │         │         │         │         │         ││         │         │         │         │         │         │
+      │  F U N  │         │         │         │         │         ││         │         │         │         │         │         │
       └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                     │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    ▼    │
                                     └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */
 
     [_FUN_PLUS] = LAYOUT(
         //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-                  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-                  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-        XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+                KC_1,     KC_2,     KC_3,     KC_4,     KC_5,       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+                XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+        TG(3),  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
                                       _______,  _______,  _______,    _______,  _______,  _______
     )
 };
